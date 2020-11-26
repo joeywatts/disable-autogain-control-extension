@@ -14,7 +14,8 @@
     "browser_action": {},
     "permissions": [
         "tabs",
-        "activeTab"
+        "activeTab",
+        "contextMenus"
     ],
     "optional_permissions": [
         "http://*/",
