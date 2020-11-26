@@ -1,19 +1,23 @@
 {
-    "name": "disable-autogain-gmeet",
+    "name": "Disable Automatic Gain Control",
     "version": "1.0",
     "description": "Disables automatic microphone gain control on Google Meet/Hangouts.",
     "manifest_version": 2,
-    "content_scripts": [{
-        "matches": [
-            "https://meet.google.com/*",
-            "https://hangouts.google.com/*"
-        ],
-        "js": ["installDisableAutogain.js"],
-        "run_at": "document_start",
-        "all_frames": true
-    }],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
     "web_accessible_resources": [
         "disableAutogain.js"
     ],
-    "permissions": []
+    "browser_action": {},
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
+    "optional_permissions": [
+        "http://*/",
+        "https://*/"
+    ]
 }
