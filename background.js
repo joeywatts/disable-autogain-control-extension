@@ -30,7 +30,7 @@ function injectScriptIfNecessary(tab) {
 
     try {
         const { origin, protocol } = new URL(tab.url);
-        if (protocol !== "https" && protocol !== "http:") {
+        if (protocol !== "https:" && protocol !== "http:") {
             return;
         }
         chrome.permissions.contains({
